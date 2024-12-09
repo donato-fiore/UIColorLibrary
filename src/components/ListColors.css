@@ -1,0 +1,141 @@
+/* ListColors component */
+.color-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Each color category section */
+.color-category {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: margin-bottom 0.3s ease;
+}
+
+/* Expanded and collapsed states for the color category */
+.color-category.expanded {
+    padding-bottom: 15px;
+}
+
+.color-category.collapsed {
+    padding-bottom: 0px;
+}
+
+/* Title for each category */
+.category-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Grid for the `color-item`s */
+.color-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Each color item */
+.color-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    position: relative;
+}
+
+/* Container for the color name and hex value */
+.color-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Style for the color name */
+.color-item .color-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Hover effect for the color name */
+.color-name:hover::after {
+    content: attr(data-full-name);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* Style for the hex value */
+.color-item .color-value {
+    font-size: 0.85rem;
+    color: #bbbbbb;
+    max-width: fit-content;
+    padding: 2px 0px 2px 5px;
+}
+
+/* Button to copy the hex value */
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: 1rem;
+    vertical-align: middle;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+/* Container for the color value */
+.color-value-container {
+    border-radius: 7px;
+    max-width: fit-content;
+    cursor: pointer;
+}
+
+/* Hover effect for the color item */
+.color-value-container:hover {
+    background-color: color-mix(in srgb, transparent, white 15%);
+}
+
+/* Header for each category */
+.category-header {
+    display: flex;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* Icon for the category header */
+.caret-icon {
+    padding-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Expanded and collapsed states for the caret icon */
+.caret-icon.bi-caret-down {
+    transform: rotate(0deg);
+}
+
+.caret-icon.bi-caret-right {
+    transform: rotate(-90deg);
+}
